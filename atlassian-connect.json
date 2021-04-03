@@ -1,0 +1,79 @@
+{
+    "key": "cxdevops-proxy",
+    "name": "Connected DevOps Proxy",
+    "description": "An Atlassian Connect API proxy for Connected DevOps written in Atlassian Connect Express",
+    "baseUrl": "{{localBaseUrl}}",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed",
+        "uninstalled": "/uninstalled",
+        "enabled": "/enabled",
+        "disabled": "/disabled"
+    },
+    "scopes": [
+        "WRITE"
+    ],
+    "modules": {
+        "jiraDevelopmentTool": {
+            "key": "cxdevops-proxy",
+            "name": {
+                "value": "CxDevOps Development Tool (Git Repo)"
+            },
+            "url": "http://example.com/",
+            "application": {
+                "value": "Development Tool (Git Repo)"
+            },
+            "logoUrl": "/public/img/Code%20Repo.svg",
+            "capabilities": [
+                "commit"
+            ]
+        },
+        "jiraBuildInfoProvider": {
+            "key": "cxdevops-proxy",
+            "name": {
+                "value": "CxDevOps Build Automation Tool (Continuous Integration)"
+            },
+            "homeUrl": "http://example.com/",
+            "logoUrl": "/public/img/Code%20Pipeline.svg",
+            "documentationUrl": "http://example.com/",
+            "actions": {}
+        },
+        "jiraDeploymentInfoProvider": {
+            "key": "cxdevops-proxy",
+            "name": {
+                "value": "CxDevOps Deployment Automation Tool (Continuous Deployment)"
+            },
+            "homeUrl": "http://example.com/",
+            "logoUrl": "/public/img/Code%20Release%20Ship.svg",
+            "documentationUrl": "http://example.com/",
+            "actions": {}
+        },
+        "jiraFeatureFlagInfoProvider": {
+            "key": "cxdevops-proxy",
+            "name": {
+                "value": "CxDevOps Feature Flag"
+            },
+            "homeUrl": "http://example.com/",
+            "logoUrl": "/public/img/Settings.svg",
+            "documentationUrl": "/public/img/Code%20Release%20Ship.svg",
+            "actions": {}
+        },
+        "generalPages": [
+            {
+                "key": "hello-world-page-jira",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Hello World"
+                },
+                "url": "/hello-world",
+                "conditions": [
+                    {
+                        "condition": "user_is_logged_in"
+                    }
+                ]
+            }
+        ]
+    }
+}

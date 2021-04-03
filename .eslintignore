@@ -1,0 +1,9 @@
+# eslint ignores hidden files by default
+!.*
+node_modules/**
+**/package-lock.json
+**/tsconfig.json
+.vscode/**
+dist/**
+coverate/**
+**/jest.config.js
